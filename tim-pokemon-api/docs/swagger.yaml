@@ -1,0 +1,54 @@
+basePath: /v1
+definitions:
+  models.Team:
+    properties:
+      create_time:
+        type: string
+      memo:
+        type: string
+      name:
+        type: string
+      update_time:
+        type: string
+      uuid:
+        type: string
+    type: object
+info:
+  contact:
+    email: tim.wu@dotzero.tech
+    name: yuting(Tim)
+  description: Pokemon For Life  api server
+  license: {}
+  title: Yuting-One-Month Project API
+  version: "1.0"
+paths:
+  /teams:
+    get:
+      description: get all teams
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: ok
+          schema:
+            $ref: '#/definitions/models.Team'
+      summary: get team
+      tags:
+      - Teams
+    post:
+      description: create one teams
+      parameters:
+      - description: Add team
+        in: body
+        name: team
+        required: true
+        schema:
+          $ref: '#/definitions/models.Team'
+      produces:
+      - application/json
+      responses:
+        "200": {}
+      summary: create team
+      tags:
+      - Teams
+swagger: "2.0"

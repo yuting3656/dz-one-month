@@ -1,0 +1,82 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "Pokemon For Life  api server",
+        "title": "Yuting-One-Month Project API",
+        "contact": {
+            "name": "yuting(Tim)",
+            "email": "tim.wu@dotzero.tech"
+        },
+        "license": {},
+        "version": "1.0"
+    },
+    "basePath": "/v1",
+    "paths": {
+        "/teams": {
+            "get": {
+                "description": "get all teams",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Teams"
+                ],
+                "summary": "get team",
+                "responses": {
+                    "200": {
+                        "description": "ok",
+                        "schema": {
+                            "$ref": "#/definitions/models.Team"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "description": "create one teams",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Teams"
+                ],
+                "summary": "create team",
+                "parameters": [
+                    {
+                        "description": "Add team",
+                        "name": "team",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.Team"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {}
+                }
+            }
+        }
+    },
+    "definitions": {
+        "models.Team": {
+            "type": "object",
+            "properties": {
+                "create_time": {
+                    "type": "string"
+                },
+                "memo": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "update_time": {
+                    "type": "string"
+                },
+                "uuid": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}
