@@ -17,7 +17,7 @@ var (
 func init() {
 	host := os.Getenv("HOST")
 	fmt.Print(host)
-	user := os.Getenv("USER")
+	user := os.Getenv("DB_USER")
 	password := os.Getenv("PSSWORD")
 	pgDbName := os.Getenv("PG_DB_NAME")
 	dbUrl = fmt.Sprintf("host=%s user=%s password=%s dbname=%s sslmode=disable ",

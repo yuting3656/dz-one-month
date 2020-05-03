@@ -1,24 +1,28 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-
+import PokeCard from './components/PokeCard/PokeCard';
+import AddPokeCard from './components/AddPokeCard/AddPokeCard';
+import {
+  Row, 
+  Col,
+  PageHeader
+} from 'antd';
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Row gutter={[8, 8]}>
+        <Col span={8}> </Col>
+        <Col span={8}>
+            <PokeCard/>
+        </Col>
+        <Col span={8}> </Col>
+      </Row>
+      <Row>
+        <Col>
+        <PageHeader title="ADD Pokemon"></PageHeader>
+        < AddPokeCard/>
+        </Col>
+      </Row>
     </div>
   );
 }
